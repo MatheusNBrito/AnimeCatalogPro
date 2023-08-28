@@ -25,3 +25,16 @@ with app.app_context():
 @app.route("/index")
 def index():
     return render_template("index.html")
+
+@app.route("/cadastrar")
+def cadastrar():
+    return render_template("cadastro.html")
+
+@app.route("/cadastro", methods=['GET', 'POST'])
+def cadastro():
+    if request.method == "POST":
+        nome = request.form.get("nome")
+        genero = request.form.get("genero")
+
+if __name__ == '__main__':
+    app.run(debug=True)
